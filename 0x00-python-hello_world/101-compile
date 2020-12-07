@@ -1,2 +1,2 @@
-#!/bin/sh
-python -m compileall-B $PYFILE
+#!/bin/bash
+python -m py_compile-B $PYFILE
