@@ -10,34 +10,35 @@
 */
 listint_t *insert_node(listint_t **head, int number)
 {
-    listint_t *node;
-    listint_t *new_node = NULL;
+	listint_t *node;
+	listint_t *new_node = NULL;
 
-    if (!head)
-        return (NULL);
-    node = *head;
-    new_node = malloc(sizeof(listint_t));
-    if (number < node->n)
-     {
-        new_node->n = number;
-        new_node->next = *head;
-        *head = new_node->next;
-        return (new_node);
-     }
-    while(node)
-    {
-        if(node->next == NULL)
-        {
-        return (add_nodeint_end(head, number));
-        }
-        if ((number > node->n) && (number < (node->next)->n))
-        {
-            new_node->n = number;
-            new_node->next = node->next;
-            node->next = new_node;
-            return (new_node);
-        }
-        node = node->next;
-    }
-    return (NULL);
+	if (!head)
+		return (NULL);
+	node = *head;
+	new_node = malloc(sizeof(listint_t));
+	if (number < node->n)
+	{
+		new_node->n = number;
+		new_node->next = *head;
+		*head = new_node->next;
+		return (new_node);
+	}
+	while (node)
+	{
+		if (node->next == NULL)
+		{
+			return (add_nodeint_end(head, number));
+		}
+		if ((number > node->n) && (number < (node->next)->n))
+		{
+			new_node->n = number;
+			new_node->next = node->next;
+			node->next = new_node;
+			return (new_node);
+		}
+		node = node->next;
+	}
+	free(new_node);
+	return (NULL);
 }
