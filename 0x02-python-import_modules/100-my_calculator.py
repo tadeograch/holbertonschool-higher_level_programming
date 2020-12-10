@@ -15,6 +15,6 @@ if __name__ == "__main__":
         print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     elif (argv[2] == "/"):
         print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
-    else :
+    else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
