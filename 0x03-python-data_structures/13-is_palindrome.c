@@ -7,7 +7,8 @@ int is_palindrome(listint_t **head)
 	listint_t *last;
 
 	int i, j, len, count = 0, tope = 0;
-
+	if (!head)
+		return (0);
 	for (len = 0, first = *head; first != NULL; len++)
 	{
 		first = first->next;
@@ -23,11 +24,12 @@ int is_palindrome(listint_t **head)
 
 		tope--;
 		if (first->n != last->n)
-			break;
+			return(0);
+			/*break;*/
 		count++;
 		first = first->next;
 	}
-	if (count == len / 2)
-		return (1);
-	return (0);
+	/*if (count == len / 2)
+	  return (1);*/
+	return (1);
 }
