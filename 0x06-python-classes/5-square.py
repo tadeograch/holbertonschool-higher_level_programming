@@ -26,6 +26,7 @@ class Square:
     def area(self):
         return self.__size ** 2
 
+    '''Prints the square'''
     def my_print(self):
         if self.__size > 0:
             for i in range(0, self.__size):
