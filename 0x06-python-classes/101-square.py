@@ -71,9 +71,9 @@ class Square:
                     sqr += " "
             for j in range(0, self.__size):
                 sqr += "#"
-            if i < self.__size - 1:
-                sqr += "\n"
+            #if i < self.__size - 1:
+            sqr += "\n"
         return sqr
 
     def __str__(self):
-        return "%s" % (self.my_print())
+        return self.my_print()
