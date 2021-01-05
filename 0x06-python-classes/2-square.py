@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+'''Square class'''
+
+
 class Square:
-     def __init__(self, size=0):
+    '''size instantiation'''
+    def __init__(self, size=0):
         if not type(size) is int:
             raise TypeError("size must be an integer")
         elif size < 0:
