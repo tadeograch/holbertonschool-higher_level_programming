@@ -57,20 +57,23 @@ class Square:
 
     '''Prints the square'''
     def my_print(self):
+        sqr = ""
         if self.__size == 0:
-            print()
-            return
+            sqr = "\n"
+            return sqr
         if self.__position[1] > 0:
             for l in range(0, self.__position[1]):
-                print()
+                sqr += "\n"
 
         for i in range(0, self.__size):
             if self.__position[0] > 0:
                 for k in range(0, self.__position[0]):
-                    print(" ", end="")
+                    sqr += " "
             for j in range(0, self.__size):
-                print("#", end="")
-            print()
+                sqr += "#"
+            if i < self.__size - 1:
+                sqr += "\n"
+        return sqr
 
     def __str__(self):
-        return str(self.my_print())
+        return "%s" % (self.my_print())
