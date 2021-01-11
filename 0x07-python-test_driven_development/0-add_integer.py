@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-
 """
 0. Integers addition
 A function that adds 2 integers
 add_integer(a, b)
 """
+
 
 def add_integer(a, b=98):
     """

@@ -1,7 +1,17 @@
 #!/usr/bin/python3
 
+"""
+5. Text indentation
+A function that prints a text with 2 new lines
+after each of these characters: ., ? and :
+tex_indentation(text)
+"""
+
 
 def text_indentation(text):
+    """
+    Function that indent the text
+    """
 
     if not type(text) is str:
         raise TypeError("text must be a string")

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-
 """
 2. Say my name
 A function that prints My name is <first name> <last name>
 say_my_name(first_name, last_name)
 """
+
 
 def say_my_name(first_name, last_name=""):
     """
