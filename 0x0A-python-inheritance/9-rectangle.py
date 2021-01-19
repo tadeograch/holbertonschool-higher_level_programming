@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''Rectangle class'''
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
@@ -16,4 +17,4 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
