@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-'''A script that adds all arguments to a Python list, and then save them to a file'''
+'''
+A script that adds all arguments to a Python list, and then save them to a file
+'''
 
 from sys import argv
 import os
@@ -11,7 +13,7 @@ if os.path.isfile('add_item.json'):
     p_list = load_from_json_file('add_item.json')
 else:
     p_list = []
-    
+
 for arg in argv[1:]:
     p_list.append(arg)
 
