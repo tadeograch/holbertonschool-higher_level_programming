@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+'''Pascal triangle function'''
 
 
 def pascal_triangle(n):
-
+    '''
+    Returns a list of lists
+    with the pascal triangle
+    '''
     r_list = []
     if n <= 0:
         return r_list
