@@ -8,26 +8,34 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Instantation of attributes'''
         super().__init__(id)
-        if not type(width) is int:
+        if type(width) is int:
+            if width > 0:
+                self.__width = width
+            elif width <= 0:
+                raise ValueError("width must be > 0")
+        else:
             raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        if not type(height) is int:
+        if type(height) is int:
+            if height > 0:
+                self.__height = height
+            else:
+                raise ValueError("height must be > 0")
+        else:
             raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        if not type(x) is int:
+        if type(x) is int:
+            if x >= 0:
+                self.__x = x
+            else:
+                raise ValueError("x must be >= 0")
+        else:
             raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        if not type(y) is int:
+        if type(y) is int:
+            if y >= 0:
+                self.__y = y
+            else:
+                raise ValueError("y must be >= 0")
+        else:
             raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
     @property
     def width(self):
