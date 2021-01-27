@@ -65,4 +65,4 @@ class Base:
                 lista = cls.from_json_string(File)
                 for i in lista:
                     MyList.append(cls.create(**i))
-            return MyList
+        return MyList
