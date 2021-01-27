@@ -38,48 +38,12 @@ class Square(Rectangle):
         self.__height = value
 
     def update(self, *args, **kwargs):
-        '''Updates attributes'''
-        if args and len(args) > 0:
-            if len(args) > 0:
-                self.id = args[0]
-            if len(args) > 1:
-                if not type(args[1]) is int:
-                    raise TypeError("width must be an integer")
-                if args[1] <= 0:
-                    raise ValueError("width must be > 0")
-                self.__width = args[1]
-                self.__height = args[1]
-            if len(args) > 2:
-                if not type(args[2]) is int:
-                    raise TypeError("x must be an integer")
-                if args[2] < 0:
-                    raise ValueError("x must be >= 0")
-                self.__x = args[2]
-            if len(args) > 3:
-                if not type(args[3]) is int:
-                    raise TypeError("y must be an integer")
-                if args[3] < 0:
-                    raise ValueError("y must be >= 0")
-                self.__y = args[3]
-        else:
-            for key, val in kwargs.items():
-                if not type(val) is int:
-                    raise TypeError("{} must be an integer".format(key))
-                if key == "id":
-                    self.id = val
-                if key == "size":
-                    if val <= 0:
-                        raise ValueError("{} must be > 0".format(key))
-                    self.__width = val
-                    self.__height = val
-                if key == "x":
-                    if val < 0:
-                        raise ValueError("{} must be >= 0".format(key))
-                    self.__x = val
-                if key == "y":
-                    if val < 0:
-                        raise ValueError("{} must be >= 0".format(key))
-                    self.__y = val
+        my_attr = ["id", "size", "x", "y"]
+        for i in range(len(args)):
+            setattr(self, my_attr[i], args[i])
+        if kwargs is not None:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
 
     def to_dictionary(self):
         '''Returns the dictionary representation of a Square'''
