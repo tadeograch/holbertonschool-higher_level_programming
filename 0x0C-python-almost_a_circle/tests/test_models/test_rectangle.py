@@ -10,11 +10,11 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     '''Testing Rectangle class'''
     def test_cases(self):
-         '''Testing simple cases'''
-         Base._Base__nb_objects = 0
-         self.assertEqual(Rectangle(10, 2).id, 1)
-         self.assertEqual(Rectangle(10, 2).width, 10)
-         self.assertEqual(Rectangle(10, 2, 5, 3, 12).id, 12)
+        '''Testing simple cases'''
+        Base._Base__nb_objects = 0
+        self.assertEqual(Rectangle(10, 2).id, 1)
+        self.assertEqual(Rectangle(10, 2).width, 10)
+        self.assertEqual(Rectangle(10, 2, 5, 3, 12).id, 12)
 
     def test_mandatory_width(self):
         '''Test that width is a mandatory arg'''
@@ -31,7 +31,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Rectangle("Holberton", 1)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            r = Rectangle(True , 1)
+            r = Rectangle(True, 1)
 
     def test_width_valueerror(self):
         '''Test width TypeError'''
@@ -60,7 +60,7 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 2, "Holberton")
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Rectangle(1, 2, True)
-    
+
     def test_x_valueerror(self):
         '''Test x ValueError'''
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
@@ -83,13 +83,13 @@ class TestRectangle(unittest.TestCase):
         Base._Base__nb_objects = 0
         r = Rectangle(1, 2)
         self.assertEqual(r.area(), 2)
-        r  = Rectangle(2, 3, 4, 5, 6)
+        r = Rectangle(2, 3, 4, 5, 6)
         self.assertEqual(r.area(), 6)
 
     def test_display(self):
         '''Test display'''
         Base._Base__nb_objects = 0
-        
+
         r = Rectangle(3, 3)
         output = io.StringIO()
         sys.stdout = output
@@ -111,7 +111,7 @@ class TestRectangle(unittest.TestCase):
     def test_str(self):
         '''Test str method'''
         Base._Base__nb_objects = 0
-        
+
         r = Rectangle(1, 2)
         r_str = "[Rectangle] (1) 0/0 - 1/2"
         self.assertEqual(str(r), r_str)

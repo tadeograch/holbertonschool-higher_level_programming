@@ -11,11 +11,11 @@ from models.square import Square
 class TestSquare(unittest.TestCase):
     '''Testing Square class'''
     def test_cases(self):
-         '''Testing simple cases'''
-         Base._Base__nb_objects = 0
-         self.assertEqual(Square(10, 2).id, 1)
-         self.assertEqual(Square(10, 2).size, 10)
-         self.assertEqual(Square(10, 2, 5, 3).id, 3)
+        '''Testing simple cases'''
+        Base._Base__nb_objects = 0
+        self.assertEqual(Square(10, 2).id, 1)
+        self.assertEqual(Square(10, 2).size, 10)
+        self.assertEqual(Square(10, 2, 5, 3).id, 3)
 
     def test_mandatory_size(self):
         '''Test that size is a mandatory arg'''
@@ -27,7 +27,7 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r = Square("Holberton", 1)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            r = Square(True , 1)
+            r = Square(True, 1)
 
     def test_size_valueerror(self):
         '''Test size TypeError'''
@@ -42,11 +42,11 @@ class TestSquare(unittest.TestCase):
             r = Square(1, "Holberton")
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r = Square(1, True)
-    
+
     def test_x_valueerror(self):
         '''Test x ValueError'''
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            r = Square(1,-3)
+            r = Square(1, -3)
 
     def test_y_typeerror(self):
         '''Test y TypeError'''
@@ -65,13 +65,13 @@ class TestSquare(unittest.TestCase):
         Base._Base__nb_objects = 0
         r = Square(2)
         self.assertEqual(r.area(), 4)
-        r  = Square(3, 4, 5, 6)
+        r = Square(3, 4, 5, 6)
         self.assertEqual(r.area(), 9)
 
     def test_display(self):
         '''Test display'''
         Base._Base__nb_objects = 0
-        
+
         r = Square(3)
         output = io.StringIO()
         sys.stdout = output
@@ -93,7 +93,7 @@ class TestSquare(unittest.TestCase):
     def test_str(self):
         '''Test str method'''
         Base._Base__nb_objects = 0
-        
+
         r = Square(2)
         r_str = "[Square] (1) 0/0 - 2"
         self.assertEqual(str(r), r_str)
