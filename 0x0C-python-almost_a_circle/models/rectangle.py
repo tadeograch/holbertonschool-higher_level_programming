@@ -7,35 +7,28 @@ class Rectangle(Base):
     '''Class Rectangle that inherits from base'''
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Instantation of attributes'''
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
-        if type(width) is int:
-            if width > 0:
-                self.__width = width
-            elif width <= 0:
-                raise ValueError("width must be > 0")
-        else:
+        if not type(width) is int:
             raise TypeError("width must be an integer")
-        if type(height) is int:
-            if height > 0:
-                self.__height = height
-            else:
-                raise ValueError("height must be > 0")
-        else:
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        if not type(height) is int:
             raise TypeError("height must be an integer")
-        if type(x) is int:
-            if x >= 0:
-                self.__x = x
-            else:
-                raise ValueError("x must be >= 0")
-        else:
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        if not type(x) is int:
             raise TypeError("x must be an integer")
-        if type(y) is int:
-            if y >= 0:
-                self.__y = y
-            else:
-                raise ValueError("y must be >= 0")
-        else:
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        if not type(y) is int:
             raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+        
 
     @property
     def width(self):
