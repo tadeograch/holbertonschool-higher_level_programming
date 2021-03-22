@@ -15,7 +15,7 @@ for (j = 0; j < arr.length; j++) {
     }
   }
 }
-if (arr.length === 1) {
+if (process.argv.length < 3) {
   console.log(0);
 } else {
   console.log(max2);
