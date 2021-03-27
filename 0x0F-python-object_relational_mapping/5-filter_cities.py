@@ -20,10 +20,13 @@ if __name__ == "__main__":
                 WHERE cities.state_id=states.id ORDER BY cities.id", (MY_C,))
     rows = cur.fetchall()
     rows = [i[0] for i in rows]
-    for j in range(len(rows)):
-        if j is len(rows) - 1:
-            print("{}".format(rows[j]))
-        else:
-            print("{}, ".format(rows[j]), end="")
+    if rows:
+        for j in range(len(rows)):
+            if j is len(rows) - 1:
+                print("{}".format(rows[j]))
+            else:
+                print("{}, ".format(rows[j]), end="")
+    else:
+        print()
     db.close()
     cur.close()
