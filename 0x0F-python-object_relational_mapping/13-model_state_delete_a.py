@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""deletes all State objects with a name containing the letter a"""
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
