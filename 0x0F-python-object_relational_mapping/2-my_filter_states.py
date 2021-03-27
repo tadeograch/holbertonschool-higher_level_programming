@@ -17,6 +17,7 @@ if __name__ == "__main__":
                 ORDER BY states.id".format(MY_NAME))
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     db.close()
     cur.close()
