@@ -13,10 +13,11 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS,
                          db=MY_DB, port=3306, charset="utf8")
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name LIKE '{}' \
-                ORDER BY states.id".format(MY_NAME))
+    cur.execute("SELECT * FROM states WHERE states.name = '{:s}' \
+                ORDER BY id ASC".format(MY_NAME))
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     db.close()
     cur.close()
