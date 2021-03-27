@@ -13,7 +13,7 @@ if __name__ == "__main__":
                          db=MY_DB, port=3306, charset="utf8")
     cur = db.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name FROM cities \
-                INNER JOIN states on cities.state_id=states.id ORDER BY cities.id")
+                INNER JOIN states on cities.state_id=states.id ORDER BY id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
