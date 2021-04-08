@@ -8,8 +8,9 @@ def find_peak(list_of_integers):
     n = len(list_of_integers)
     if n == 0:
         return None
-    mid = int(n / 2)
+    mid = n // 2
     return aux_func(list_of_integers, mid)
+
 
 def aux_func(list_i, n):
     '''Recursive aux function'''
@@ -17,8 +18,8 @@ def aux_func(list_i, n):
         return list_i[n]
 
     if list_i[n] < list_i[n - 1]:
-        return aux_func(list_i, int(n / 2))
+        return aux_func(list_i, n // 2)
     elif list_i[n] < list_i[n + 1]:
-        return aux_func(list_i, n + int(n / 2))
+        return aux_func(list_i, n + (n // 2))
     else:
         return list_i[n]
