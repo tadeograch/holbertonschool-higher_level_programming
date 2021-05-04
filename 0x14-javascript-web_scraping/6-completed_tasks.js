@@ -6,21 +6,18 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const tasks = JSON.parse(body);
-    let uId = 1;
-    let dict = {};
+    const dict = {};
     let i = 0;
     while (i in tasks) {
-      let done = 0;
-      while (tasks[i].userId === uId) {
-        if (tasks[i].completed) {
-          done++;
+      const uId = tasks[i].userId;
+      if (tasks[i].completed) {
+        if (uId in dict) {
+          dict[uId] += 1;
+        } else {
+          dict[uId] = 1;
         }
-        i++;
       }
-      if (done > 0) {
-        dict[uId.toString()] = done;
-      }
-      uId++;
+      i++;
     }
     console.log(dict);
   }
