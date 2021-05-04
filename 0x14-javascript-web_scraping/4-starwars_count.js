@@ -5,12 +5,12 @@ request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    let result = JSON.parse(body).results;
+    const res = JSON.parse(body).results;
     let num = 0;
-    for (let i = 0; i < result.lenght; i++) {
-      let character = result[i].characters;
-      for (let j = 0; j < character.lenght; j++) {
-        if (character[j].includes('18')) {
+    for (const i in res) {
+      const chars = res[i].characters;
+      for (const j in chars) {
+        if (chars[j].includes('18')) {
           num++;
         }
       }
