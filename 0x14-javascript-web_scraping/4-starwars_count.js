@@ -9,8 +9,10 @@ request(url, function (error, response, body) {
     const results = JSON.parse(body).results;
     let num = 0;
     for (let i = 0; i < results.lenght; i++) {
-      if (results[i].characters.includes(character)) {
-        num++;
+      for (let j = 0; i < results[i].characters; j++) {
+        if (results[i].characters[j] === character) {
+          num++;
+        }
       }
     }
     console.log(num);
